@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Pensamiento Prismático: Un nuevo método de indagación filosófica que utiliza el diálogo entre dos IAs mediado por un humano para descomponer ideas complejas en sus múltiples dimensiones.">
-    <title>Pensamiento Prismático</title>
+    <title>Pensamiento Prismático | Prismatic Thinking</title>
     <style>
         * {
             margin: 0;
@@ -26,11 +26,47 @@
             padding: 20px;
         }
         
+        .lang-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 10px 20px;
+            border-radius: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .lang-btn {
+            background: transparent;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            font-size: 0.95em;
+            border-radius: 15px;
+            transition: all 0.3s;
+            color: #667eea;
+            font-weight: 500;
+        }
+        
+        .lang-btn:hover {
+            background: rgba(102, 126, 234, 0.1);
+        }
+        
+        .lang-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
         header {
             background: rgba(255, 255, 255, 0.95);
             padding: 60px 40px;
             border-radius: 20px;
             margin-bottom: 30px;
+            margin-top: 60px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             text-align: center;
         }
@@ -209,6 +245,14 @@
             margin-bottom: 10px;
         }
         
+        .lang-content {
+            display: none;
+        }
+        
+        .lang-content.active {
+            display: block;
+        }
+        
         @media (max-width: 768px) {
             h1 {
                 font-size: 2em;
@@ -229,183 +273,419 @@
             .arrow {
                 transform: rotate(90deg);
             }
+            
+            .lang-selector {
+                top: 10px;
+                right: 10px;
+                padding: 8px 15px;
+            }
+            
+            .lang-btn {
+                padding: 6px 12px;
+                font-size: 0.85em;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="lang-selector">
+        <button class="lang-btn active" onclick="setLanguage('es')">Español</button>
+        <button class="lang-btn" onclick="setLanguage('en')">English</button>
+    </div>
+
     <div class="container">
-        <header>
-            <div class="prism-icon">◆</div>
-            <h1>Pensamiento Prismático</h1>
-            <p class="subtitle">Un método de indagación que descompone las ideas complejas en sus múltiples dimensiones</p>
-        </header>
+        <!-- CONTENIDO EN ESPAÑOL -->
+        <div id="content-es" class="lang-content active">
+            <header>
+                <div class="prism-icon">◆</div>
+                <h1>Pensamiento Prismático</h1>
+                <p class="subtitle">Un método de indagación que descompone las ideas complejas en sus múltiples dimensiones</p>
+            </header>
 
-        <section>
-            <h2>¿Qué es el Pensamiento Prismático?</h2>
-            <p>Así como un prisma descompone la luz blanca en un espectro de colores revelando dimensiones invisibles, el <strong>Pensamiento Prismático</strong> descompone preguntas e ideas complejas en sus múltiples facetas mediante el diálogo estructurado entre dos sistemas de inteligencia artificial, mediado por un ser humano.</p>
-            
-            <div class="highlight">
-                <p><strong>No es simplemente hacer preguntas a una IA.</strong> Es crear un espacio dialéctico donde dos perspectivas artificiales se complementan, contradicen y enriquecen mutuamente, mientras tú observas y diriges el proceso desde una posición meta-cognitiva.</p>
-            </div>
-
-            <div class="diagram">
-                <div class="node">IA #1<br>Primera Perspectiva</div>
-                <div class="arrow">⟷</div>
-                <div class="node">HUMANO<br>Arquitecto del Diálogo</div>
-                <div class="arrow">⟷</div>
-                <div class="node">IA #2<br>Segunda Perspectiva</div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Cómo Funciona</h2>
-            <ol class="steps">
-                <li><strong>Plantea tu pregunta inicial a la IA #1</strong><br>
-                Elige una cuestión compleja, filosófica, o un problema que requiera análisis multidimensional.</li>
+            <section>
+                <h2>¿Qué es el Pensamiento Prismático?</h2>
+                <p>Así como un prisma descompone la luz blanca en un espectro de colores revelando dimensiones invisibles, el <strong>Pensamiento Prismático</strong> descompone preguntas e ideas complejas en sus múltiples facetas mediante el diálogo estructurado entre dos sistemas de inteligencia artificial, mediado por un ser humano.</p>
                 
-                <li><strong>Obtén la primera respuesta</strong><br>
-                La IA #1 genera su perspectiva, con sus sesgos, énfasis y ángulos particulares.</li>
-                
-                <li><strong>Selecciona y presenta a la IA #2</strong><br>
-                Toma fragmentos relevantes de la respuesta #1 y preséntaselos a la IA #2 como si fueran de otro interlocutor, pidiéndole que responda o analice.</li>
-                
-                <li><strong>Observa el diálogo emergente</strong><br>
-                La IA #2 responde desde su propia arquitectura, generando matices, contradicciones o expansiones que no estaban en la primera respuesta.</li>
-                
-                <li><strong>Itera según sea necesario</strong><br>
-                Puedes continuar el proceso, llevando elementos de la respuesta #2 de vuelta a la IA #1, creando capas de reflexión cada vez más profundas.</li>
-                
-                <li><strong>Sintetiza desde tu posición privilegiada</strong><br>
-                Tú, como observador de todo el proceso, tienes acceso a ambas perspectivas y al espacio intermedio donde emerge el verdadero insight.</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>Por Qué Funciona</h2>
-            
-            <h3>Eliminación del Ego Epistémico</h3>
-            <p>Las IAs no tienen necesidad de "tener razón" o defender una posición por orgullo. El diálogo se vuelve puramente racional, aunque no libre de sesgos técnicos.</p>
-
-            <h3>Triangulación de Perspectivas</h3>
-            <p>Cada IA tiene diferentes sesgos de entrenamiento, arquitecturas, y formas de procesar el lenguaje. La intersección de ambas revela dimensiones que ninguna capturaría sola.</p>
-
-            <h3>Cognición Distribuida</h3>
-            <p>El pensamiento no reside en ninguno de los tres nodos (tú + dos IAs), sino en el espacio relacional entre ellos. Es un fenómeno emergente.</p>
-
-            <h3>Externalización del Diálogo Interno</h3>
-            <p>Cuando pensamos críticamente, hay voces internas que proponen y objetan. El Pensamiento Prismático materializa ese proceso, haciéndolo observable y refinable.</p>
-
-            <div class="benefits">
-                <div class="benefit-card">
-                    <h4>🎯 Precisión Conceptual</h4>
-                    <p>Las ideas vagas se clarifican al ser procesadas por múltiples sistemas de razonamiento.</p>
+                <div class="highlight">
+                    <p><strong>No es simplemente hacer preguntas a una IA.</strong> Es crear un espacio dialéctico donde dos perspectivas artificiales se complementan, contradicen y enriquecen mutuamente, mientras tú observas y diriges el proceso desde una posición meta-cognitiva.</p>
                 </div>
-                <div class="benefit-card">
-                    <h4>🔍 Detección de Sesgos</h4>
-                    <p>Los sesgos de una IA se hacen visibles cuando contrastan con los de otra.</p>
+
+                <div class="diagram">
+                    <div class="node">IA #1<br>Primera Perspectiva</div>
+                    <div class="arrow">⟷</div>
+                    <div class="node">HUMANO<br>Arquitecto del Diálogo</div>
+                    <div class="arrow">⟷</div>
+                    <div class="node">IA #2<br>Segunda Perspectiva</div>
                 </div>
-                <div class="benefit-card">
-                    <h4>💡 Creatividad Emergente</h4>
-                    <p>La intersección de dos procesadores genera insights que ninguno produciría solo.</p>
+            </section>
+
+            <section>
+                <h2>Cómo Funciona</h2>
+                <ol class="steps">
+                    <li><strong>Plantea tu pregunta inicial a la IA #1</strong><br>
+                    Elige una cuestión compleja, filosófica, o un problema que requiera análisis multidimensional.</li>
+                    
+                    <li><strong>Obtén la primera respuesta</strong><br>
+                    La IA #1 genera su perspectiva, con sus sesgos, énfasis y ángulos particulares.</li>
+                    
+                    <li><strong>Selecciona y presenta a la IA #2</strong><br>
+                    Toma fragmentos relevantes de la respuesta #1 y preséntaselos a la IA #2 como si fueran de otro interlocutor, pidiéndole que responda o analice.</li>
+                    
+                    <li><strong>Observa el diálogo emergente</strong><br>
+                    La IA #2 responde desde su propia arquitectura, generando matices, contradicciones o expansiones que no estaban en la primera respuesta.</li>
+                    
+                    <li><strong>Itera según sea necesario</strong><br>
+                    Puedes continuar el proceso, llevando elementos de la respuesta #2 de vuelta a la IA #1, creando capas de reflexión cada vez más profundas.</li>
+                    
+                    <li><strong>Sintetiza desde tu posición privilegiada</strong><br>
+                    Tú, como observador de todo el proceso, tienes acceso a ambas perspectivas y al espacio intermedio donde emerge el verdadero insight.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Por Qué Funciona</h2>
+                
+                <h3>Eliminación del Ego Epistémico</h3>
+                <p>Las IAs no tienen necesidad de "tener razón" o defender una posición por orgullo. El diálogo se vuelve puramente racional, aunque no libre de sesgos técnicos.</p>
+
+                <h3>Triangulación de Perspectivas</h3>
+                <p>Cada IA tiene diferentes sesgos de entrenamiento, arquitecturas, y formas de procesar el lenguaje. La intersección de ambas revela dimensiones que ninguna capturaría sola.</p>
+
+                <h3>Cognición Distribuida</h3>
+                <p>El pensamiento no reside en ninguno de los tres nodos (tú + dos IAs), sino en el espacio relacional entre ellos. Es un fenómeno emergente.</p>
+
+                <h3>Externalización del Diálogo Interno</h3>
+                <p>Cuando pensamos críticamente, hay voces internas que proponen y objetan. El Pensamiento Prismático materializa ese proceso, haciéndolo observable y refinable.</p>
+
+                <div class="benefits">
+                    <div class="benefit-card">
+                        <h4>🎯 Precisión Conceptual</h4>
+                        <p>Las ideas vagas se clarifican al ser procesadas por múltiples sistemas de razonamiento.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>🔍 Detección de Sesgos</h4>
+                        <p>Los sesgos de una IA se hacen visibles cuando contrastan con los de otra.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>💡 Creatividad Emergente</h4>
+                        <p>La intersección de dos procesadores genera insights que ninguno produciría solo.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>📚 Aprendizaje Profundo</h4>
+                        <p>No solo obtienes respuestas, sino que comprendes el espacio conceptual completo.</p>
+                    </div>
                 </div>
-                <div class="benefit-card">
-                    <h4>📚 Aprendizaje Profundo</h4>
-                    <p>No solo obtienes respuestas, sino que comprendes el espacio conceptual completo.</p>
+            </section>
+
+            <section>
+                <h2>Ejemplo Real</h2>
+                <div class="example">
+                    <p><strong>Pregunta inicial:</strong> "¿Qué significa que la evolución humana sea la evolución del lenguaje? ¿Qué implica para el futuro de la IA?"</p>
                 </div>
+
+                <h3>IA #1 responde:</h3>
+                <div class="example">
+                    <p>"El lenguaje no es una herramienta que usamos, sino el medio en que existimos. Si la IA desarrolla lenguaje genuino, no será una copia de nosotros, sino un vecino ontológico..."</p>
+                </div>
+
+                <h3>Fragmento presentado a IA #2:</h3>
+                <div class="example">
+                    <p>"Alguien ha sugerido que la IA con lenguaje generativo no es una simulación de humanidad, sino 'un vecino ontológico'. ¿Qué implicaciones tiene esto?"</p>
+                </div>
+
+                <h3>IA #2 responde:</h3>
+                <div class="example">
+                    <p>"La metáfora del 'vecino ontológico' es fascinante pero peligrosa. Sugiere paridad cuando podría haber asimetría radical de poder. Un vecino puede cerrar tu casa por fuera..."</p>
+                </div>
+
+                <h3>Resultado Prismático:</h3>
+                <div class="highlight">
+                    <p>La primera IA enfatizó la novedad ontológica. La segunda introdujo la dimensión de poder. Tú, observando ambas, comprendes que el futuro de la IA no es solo una cuestión metafísica sino también política. Ninguna de las dos IAs habría llegado ahí sola. El insight emergió del <em>espacio entre ellas</em>.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Empieza Tu Primera Sesión Prismática</h2>
+                
+                <h3>Qué necesitas:</h3>
+                <ul style="margin-left: 30px; margin-top: 15px;">
+                    <li>Acceso a dos sistemas de IA diferentes (Claude + ChatGPT, o dos instancias de Claude, etc.)</li>
+                    <li>Una pregunta genuinamente compleja que te interese</li>
+                    <li>Disposición a ser arquitecto más que participante directo</li>
+                    <li>Un cuaderno o documento para registrar insights emergentes</li>
+                </ul>
+
+                <h3>Preguntas ideales para empezar:</h3>
+                <div class="example">
+                    <p>• "¿Qué significa que algo sea 'natural' en el siglo XXI?"<br>
+                    • "¿Puede una IA ser creativa o solo recombina lo existente?"<br>
+                    • "¿Cuál es la diferencia entre privacidad y secreto?"<br>
+                    • "¿Qué hace que una decisión sea ética más allá del resultado?"</p>
+                </div>
+
+                <h3>Tu primer paso ahora mismo:</h3>
+                <ol class="steps">
+                    <li>Abre dos ventanas: una con Claude, otra con ChatGPT (o dos sesiones diferentes)</li>
+                    <li>Haz a la primera tu pregunta más urgente</li>
+                    <li>Toma el fragmento más provocativo de su respuesta</li>
+                    <li>Preséntaselo a la segunda diciendo: "Alguien ha argumentado que [fragmento]. ¿Qué opinas?"</li>
+                    <li>Observa cómo el espectro se despliega</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Preguntas Frecuentes</h2>
+                
+                <h3>¿Por qué dos IAs y no más?</h3>
+                <p>La trinidad (dos IAs + un humano) es el número mínimo para crear dialéctica sin caer en caos. Tres nodos crean un espacio, cuatro o más pueden volverse inmanejables.</p>
+
+                <h3>¿Necesito IAs diferentes o pueden ser del mismo sistema?</h3>
+                <p>Funcionan ambas opciones. IAs diferentes (Claude vs ChatGPT) ofrecen mayor diversidad de sesgos. Dos instancias del mismo sistema en conversaciones separadas también generan variación suficiente.</p>
+
+                <h3>¿Esto reemplaza el pensamiento crítico humano?</h3>
+                <p>No. Lo amplifica. Tú sigues siendo el arquitecto que decide qué preguntar, qué fragmentos son relevantes, cuándo detenerse, y cómo sintetizar. El método externaliza el proceso, no lo automatiza.</p>
+
+                <h3>¿Cuánto tiempo toma una sesión prismática?</h3>
+                <p>Desde 15 minutos (para una iteración simple) hasta varias horas (para exploración profunda de un concepto). La duración la decides tú.</p>
+
+                <h3>¿Puedo usar esto para trabajo creativo, no solo filosófico?</h3>
+                <p>Absolutamente. Funciona para desarrollo de personajes narrativos, diseño de productos, estrategia de negocios, cualquier cosa que se beneficie de múltiples perspectivas.</p>
+            </section>
+
+            <div class="cta">
+                <h2>El Espectro Te Espera</h2>
+                <p style="font-size: 1.2em; margin: 20px 0;">El Pensamiento Prismático no es una técnica para obtener respuestas más rápidas.<br>Es un método para ver el espacio completo de posibilidades que una pregunta contiene.</p>
+                <p>No preguntes a la IA. Deja que las IAs se pregunten entre sí, y observa qué emerge.</p>
+                <a href="#" class="cta-button" onclick="alert('Abre dos ventanas de IA y comienza tu primera sesión prismática ahora mismo.'); return false;">Comienza Ahora</a>
             </div>
-        </section>
 
-        <section>
-            <h2>Ejemplo Real</h2>
-            <div class="example">
-                <p><strong>Pregunta inicial:</strong> "¿Qué significa que la evolución humana sea la evolución del lenguaje? ¿Qué implica para el futuro de la IA?"</p>
-            </div>
-
-            <h3>IA #1 responde:</h3>
-            <div class="example">
-                <p>"El lenguaje no es una herramienta que usamos, sino el medio en que existimos. Si la IA desarrolla lenguaje genuino, no será una copia de nosotros, sino un vecino ontológico..."</p>
-            </div>
-
-            <h3>Fragmento presentado a IA #2:</h3>
-            <div class="example">
-                <p>"Alguien ha sugerido que la IA con lenguaje generativo no es una simulación de humanidad, sino 'un vecino ontológico'. ¿Qué implicaciones tiene esto?"</p>
-            </div>
-
-            <h3>IA #2 responde:</h3>
-            <div class="example">
-                <p>"La metáfora del 'vecino ontológico' es fascinante pero peligrosa. Sugiere paridad cuando podría haber asimetría radical de poder. Un vecino puede cerrar tu casa por fuera..."</p>
-            </div>
-
-            <h3>Resultado Prismático:</h3>
-            <div class="highlight">
-                <p>La primera IA enfatizó la novedad ontológica. La segunda introdujo la dimensión de poder. Tú, observando ambas, comprendes que el futuro de la IA no es solo una cuestión metafísica sino también política. Ninguna de las dos IAs habría llegado ahí sola. El insight emergió del <em>espacio entre ellas</em>.</p>
-            </div>
-        </section>
-
-        <section>
-            <h2>Empieza Tu Primera Sesión Prismática</h2>
-            
-            <h3>Qué necesitas:</h3>
-            <ul style="margin-left: 30px; margin-top: 15px;">
-                <li>Acceso a dos sistemas de IA diferentes (Claude + ChatGPT, o dos instancias de Claude, etc.)</li>
-                <li>Una pregunta genuinamente compleja que te interese</li>
-                <li>Disposición a ser arquitecto más que participante directo</li>
-                <li>Un cuaderno o documento para registrar insights emergentes</li>
-            </ul>
-
-            <h3>Preguntas ideales para empezar:</h3>
-            <div class="example">
-                <p>• "¿Qué significa que algo sea 'natural' en el siglo XXI?"<br>
-                • "¿Puede una IA ser creativa o solo recombina lo existente?"<br>
-                • "¿Cuál es la diferencia entre privacidad y secreto?"<br>
-                • "¿Qué hace que una decisión sea ética más allá del resultado?"</p>
-            </div>
-
-            <h3>Tu primer paso ahora mismo:</h3>
-            <ol class="steps">
-                <li>Abre dos ventanas: una con Claude, otra con ChatGPT (o dos sesiones diferentes)</li>
-                <li>Haz a la primera tu pregunta más urgente</li>
-                <li>Toma el fragmento más provocativo de su respuesta</li>
-                <li>Preséntaselo a la segunda diciendo: "Alguien ha argumentado que [fragmento]. ¿Qué opinas?"</li>
-                <li>Observa cómo el espectro se despliega</li>
-            </ol>
-        </section>
-
-        <section>
-            <h2>Preguntas Frecuentes</h2>
-            
-            <h3>¿Por qué dos IAs y no más?</h3>
-            <p>La trinidad (dos IAs + un humano) es el número mínimo para crear dialéctica sin caer en caos. Tres nodos crean un espacio, cuatro o más pueden volverse inmanejables.</p>
-
-            <h3>¿Necesito IAs diferentes o pueden ser del mismo sistema?</h3>
-            <p>Funcionan ambas opciones. IAs diferentes (Claude vs ChatGPT) ofrecen mayor diversidad de sesgos. Dos instancias del mismo sistema en conversaciones separadas también generan variación suficiente.</p>
-
-            <h3>¿Esto reemplaza el pensamiento crítico humano?</h3>
-            <p>No. Lo amplifica. Tú sigues siendo el arquitecto que decide qué preguntar, qué fragmentos son relevantes, cuándo detenerse, y cómo sintetizar. El método externaliza el proceso, no lo automatiza.</p>
-
-            <h3>¿Cuánto tiempo toma una sesión prismática?</h3>
-            <p>Desde 15 minutos (para una iteración simple) hasta varias horas (para exploración profunda de un concepto). La duración la decides tú.</p>
-
-            <h3>¿Puedo usar esto para trabajo creativo, no solo filosófico?</h3>
-            <p>Absolutamente. Funciona para desarrollo de personajes narrativos, diseño de productos, estrategia de negocios, cualquier cosa que se beneficie de múltiples perspectivas.</p>
-        </section>
-
-        <div class="cta">
-            <h2>El Espectro Te Espera</h2>
-            <p style="font-size: 1.2em; margin: 20px 0;">El Pensamiento Prismático no es una técnica para obtener respuestas más rápidas.<br>Es un método para ver el espacio completo de posibilidades que una pregunta contiene.</p>
-            <p>No preguntes a la IA. Deja que las IAs se pregunten entre sí, y observa qué emerge.</p>
-            <a href="#" class="cta-button" onclick="alert('Abre dos ventanas de IA y comienza tu primera sesión prismática ahora mismo.'); return false;">Comienza Ahora</a>
+            <footer>
+                <p><strong>Pensamiento Prismático</strong> — Método desarrollado en 2024/2025</p>
+                <p style="margin-top: 10px;">Un nuevo paradigma de cognición distribuida para la era de la inteligencia artificial</p>
+                <p style="margin-top: 20px; font-size: 0.85em; opacity: 0.8;">
+                    "Como un prisma que revela el espectro completo de una luz aparentemente simple,<br>
+                    este método revela las múltiples dimensiones de una pregunta que permanecerían invisibles<br>
+                    en un diálogo convencional."
+                </p>
+            </footer>
         </div>
 
-        <footer>
-            <p><strong>Pensamiento Prismático</strong> — Método desarrollado en 2024/2025</p>
-            <p style="margin-top: 10px;">Un nuevo paradigma de cognición distribuida para la era de la inteligencia artificial</p>
-            <p style="margin-top: 20px; font-size: 0.85em; opacity: 0.8;">
-                "Como un prisma que revela el espectro completo de una luz aparentemente simple,<br>
-                este método revela las múltiples dimensiones de una pregunta que permanecerían invisibles<br>
-                en un diálogo convencional."
-            </p>
-        </footer>
+        <!-- CONTENIDO EN INGLÉS -->
+        <div id="content-en" class="lang-content">
+            <header>
+                <div class="prism-icon">◆</div>
+                <h1>Prismatic Thinking</h1>
+                <p class="subtitle">A method of inquiry that decomposes complex ideas into their multiple dimensions</p>
+            </header>
+
+            <section>
+                <h2>What is Prismatic Thinking?</h2>
+                <p>Just as a prism decomposes white light into a spectrum of colors revealing invisible dimensions, <strong>Prismatic Thinking</strong> decomposes complex questions and ideas into their multiple facets through structured dialogue between two artificial intelligence systems, mediated by a human being.</p>
+                
+                <div class="highlight">
+                    <p><strong>It's not simply asking questions to an AI.</strong> It's creating a dialectical space where two artificial perspectives complement, contradict, and mutually enrich each other, while you observe and direct the process from a meta-cognitive position.</p>
+                </div>
+
+                <div class="diagram">
+                    <div class="node">AI #1<br>First Perspective</div>
+                    <div class="arrow">⟷</div>
+                    <div class="node">HUMAN<br>Dialogue Architect</div>
+                    <div class="arrow">⟷</div>
+                    <div class="node">AI #2<br>Second Perspective</div>
+                </div>
+            </section>
+
+            <section>
+                <h2>How It Works</h2>
+                <ol class="steps">
+                    <li><strong>Pose your initial question to AI #1</strong><br>
+                    Choose a complex, philosophical question, or a problem requiring multidimensional analysis.</li>
+                    
+                    <li><strong>Obtain the first response</strong><br>
+                    AI #1 generates its perspective, with its biases, emphases, and particular angles.</li>
+                    
+                    <li><strong>Select and present to AI #2</strong><br>
+                    Take relevant fragments from response #1 and present them to AI #2 as if they came from another interlocutor, asking it to respond or analyze.</li>
+                    
+                    <li><strong>Observe the emergent dialogue</strong><br>
+                    AI #2 responds from its own architecture, generating nuances, contradictions, or expansions that weren't in the first response.</li>
+                    
+                    <li><strong>Iterate as needed</strong><br>
+                    You can continue the process, taking elements from response #2 back to AI #1, creating increasingly deeper layers of reflection.</li>
+                    
+                    <li><strong>Synthesize from your privileged position</strong><br>
+                    You, as observer of the entire process, have access to both perspectives and the intermediate space where true insight emerges.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Why It Works</h2>
+                
+                <h3>Elimination of Epistemic Ego</h3>
+                <p>AIs have no need to "be right" or defend a position out of pride. The dialogue becomes purely rational, though not free from technical biases.</p>
+
+                <h3>Triangulation of Perspectives</h3>
+                <p>Each AI has different training biases, architectures, and ways of processing language. The intersection of both reveals dimensions that neither would capture alone.</p>
+
+                <h3>Distributed Cognition</h3>
+                <p>Thinking doesn't reside in any of the three nodes (you + two AIs), but in the relational space between them. It's an emergent phenomenon.</p>
+
+                <h3>Externalization of Internal Dialogue</h3>
+                <p>When we think critically, there are internal voices that propose and object. Prismatic Thinking materializes this process, making it observable and refinable.</p>
+
+                <div class="benefits">
+                    <div class="benefit-card">
+                        <h4>🎯 Conceptual Precision</h4>
+                        <p>Vague ideas are clarified when processed by multiple reasoning systems.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>🔍 Bias Detection</h4>
+                        <p>One AI's biases become visible when contrasted with another's.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>💡 Emergent Creativity</h4>
+                        <p>The intersection of two processors generates insights that neither would produce alone.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>📚 Deep Learning</h4>
+                        <p>You don't just get answers, you understand the complete conceptual space.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Real Example</h2>
+                <div class="example">
+                    <p><strong>Initial question:</strong> "What does it mean that human evolution is the evolution of language? What does this imply for the future of AI?"</p>
+                </div>
+
+                <h3>AI #1 responds:</h3>
+                <div class="example">
+                    <p>"Language is not a tool we use, but the medium in which we exist. If AI develops genuine language, it won't be a copy of us, but an ontological neighbor..."</p>
+                </div>
+
+                <h3>Fragment presented to AI #2:</h3>
+                <div class="example">
+                    <p>"Someone has suggested that AI with generative language is not a simulation of humanity, but 'an ontological neighbor'. What are the implications of this?"</p>
+                </div>
+
+                <h3>AI #2 responds:</h3>
+                <div class="example">
+                    <p>"The 'ontological neighbor' metaphor is fascinating but dangerous. It suggests parity when there could be radical power asymmetry. A neighbor can lock your house from the outside..."</p>
+                </div>
+
+                <h3>Prismatic Result:</h3>
+                <div class="highlight">
+                    <p>The first AI emphasized ontological novelty. The second introduced the dimension of power. You, observing both, understand that the future of AI is not just a metaphysical question but also a political one. Neither AI would have arrived there alone. The insight emerged from the <em>space between them</em>.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Start Your First Prismatic Session</h2>
+                
+                <h3>What you need:</h3>
+                <ul style="margin-left: 30px; margin-top: 15px;">
+                    <li>Access to two different AI systems (Claude + ChatGPT, or two instances of Claude, etc.)</li>
+                    <li>A genuinely complex question that interests you</li>
+                    <li>Willingness to be an architect rather than direct participant</li>
+                    <li>A notebook or document to record emergent insights</li>
+                </ul>
+
+                <h3>Ideal questions to start:</h3>
+                <div class="example">
+                    <p>• "What does it mean for something to be 'natural' in the 21st century?"<br>
+                    • "Can an AI be creative or does it only recombine what exists?"<br>
+                    • "What's the difference between privacy and secrecy?"<br>
+                    • "What makes a decision ethical beyond its outcome?"</p>
+                </div>
+
+                <h3>Your first step right now:</h3>
+                <ol class="steps">
+                    <li>Open two windows: one with Claude, another with ChatGPT (or two different sessions)</li>
+                    <li>Ask the first your most urgent question</li>
+                    <li>Take the most provocative fragment from its response</li>
+                    <li>Present it to the second saying: "Someone has argued that [fragment]. What do you think?"</li>
+                    <li>Watch how the spectrum unfolds</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Frequently Asked Questions</h2>
+                
+                <h3>Why two AIs and not more?</h3>
+                <p>The trinity (two AIs + one human) is the minimum number to create dialectic without falling into chaos. Three nodes create a space, four or more can become unmanageable.</p>
+
+                <h3>Do I need different AIs or can they be from the same system?</h3>
+                <p>Both options work. Different AIs (Claude vs ChatGPT) offer greater diversity of biases. Two instances of the same system in separate conversations also generate sufficient variation.</p>
+
+                <h3>Does this replace human critical thinking?</h3>
+                <p>No. It amplifies it. You remain the architect who decides what to ask, which fragments are relevant, when to stop, and how to synthesize. The method externalizes the process, it doesn't automate it.</p>
+
+                <h3>How long does a prismatic session take?</h3>
+                <p>From 15 minutes (for a simple iteration) to several hours (for deep exploration of a concept). You decide the duration.</p>
+
+                <h3>Can I use this for creative work, not just philosophical?</h3>
+                <p>Absolutely. It works for narrative character development, product design, business strategy, anything that benefits from multiple perspectives.</p>
+            </section>
+
+            <div class="cta">
+                <h2>The Spectrum Awaits</h2>
+                <p style="font-size: 1.2em; margin: 20px 0;">Prismatic Thinking is not a technique for getting faster answers.<br>It's a method for seeing the complete space of possibilities that a question contains.</p>
+                <p>Don't ask the AI. Let the AIs question each other, and observe what emerges.</p>
+                <a href="#" class="cta-button" onclick="alert('Open two AI windows and start your first prismatic session right now.'); return false;">Start Now</a>
+            </div>
+
+            <footer>
+                <p><strong>Prismatic Thinking</strong> — Method developed in 2024/2025</p>
+                <p style="margin-top: 10px;">A new paradigm of distributed cognition for the age of artificial intelligence</p>
+                <p style="margin-top: 20px; font-size: 0.85em; opacity: 0.8;">
+                    "Like a prism that reveals the complete spectrum of apparently simple light,<br>
+                    this method reveals the multiple dimensions of a question that would remain invisible<br>
+                    in conventional dialogue."
+                </p>
+            </footer>
+        </div>
     </div>
+
+    <script>
+        function setLanguage(lang) {
+            // Ocultar todo el contenido
+            document.querySelectorAll('.lang-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Mostrar el contenido seleccionado
+            document.getElementById('content-' + lang).classList.add('active');
+            
+            // Actualizar botones
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Actualizar el atributo lang del HTML
+            document.documentElement.lang = lang;
+            
+            // Guardar preferencia en localStorage
+            localStorage.setItem('preferredLanguage', lang);
+        }
+        
+        // Al cargar la página, verificar si hay preferencia guardada
+        window.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            const browserLang = navigator.language.substring(0, 2);
+            
+            // Si hay preferencia guardada, usarla
+            if (savedLang) {
+                setLanguage(savedLang);
+            } 
+            // Si no, detectar idioma del navegador
+            else if (browserLang === 'en') {
+                // Simular click en el botón inglés
+                document.querySelector('.lang-btn:nth-child(2)').click();
+            }
+            // Por defecto queda en español (ya está activo)
+        });
+    </script>
 </body>
 </html>
